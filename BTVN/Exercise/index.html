@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+    <style>
+        .bai1 table{
+            border-collapse: collapse;
+        }
+
+        .bai1 td,th{
+            /* border: 1px solid black; */
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        .bai1 td:first-child{
+            width: 500px;
+            padding: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="bai1">
+        <table >
+            <tr>
+                <th>Item Photo</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td><img src="./product3.png" alt="" width="300px"></td>
+                <td>Shirt</td>
+                <td>1$</td>
+            </tr>
+            <tr>
+                <td><img src="./product3.png" alt="" width="300px"></td>
+                <td>Shirt</td>
+                <td>1$</td>
+            </tr>
+            <tr>
+                <td><img src="./product3.png" alt="" width="300px"></td>
+                <td>Shirt</td>
+                <td>1$</td>
+            </tr>
+            <tr>
+                <td><img src="./product3.png" alt="" width="300px"></td>
+                <td>Shirt</td>
+                <td>1$</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <div class="bai2">
+        <h1 style="color: purple;">A Simple Form</h1>
+        <h3 style="color: #FF4E5D ;">Form fundamental</h3>
+        <fieldset>
+            <legend>Customer Info</legend>
+            <form action="">
+                <br>
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" placeholder="Enter your name" required><br><br>
+                <label for="telephone">Telephone: </label>
+                <input type="tel" name="telephone" id="telephone" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Pattern: 1-234-567-8910" required><br><br>
+                <label for="email">E-mail address: </label>
+                <input type="email" name="email" id="email" placeholder="Enter your email address" required><br><br>
+                <label for="gender">Gender: </label>
+                <input type="radio" name="gender" id="gender" required>Male
+                <input type="radio" name="gender" id="gender" required checked>Female
+                <br><br>
+                <label for="hobbies">Hobbies: </label>
+                <input type="checkbox" name="hobbies" id="baseball">
+                <label for="baseball">Baseball</label>
+                <input type="checkbox" name="hobbies" id="football">
+                <label for="football">Football</label>
+                <input type="checkbox" name="hobbies" id="badminton">
+                <label for="badminton">Badminton</label>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Books</legend>
+            <label for="bookname">Name: </label>
+            <input type="text" name="bookname" id="bookname">
+            <label for="quantity">Quantity (Maximum 5):</label>
+            <input type="number" name="quantity" id="quantity" min="1" max="5">
+        </fieldset>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </div>
+</body>
+</html>
