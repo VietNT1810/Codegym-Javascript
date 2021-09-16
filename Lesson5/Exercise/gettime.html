@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var currentTime = new Date();
+        var hour = currentTime.getHours();
+        var minute = currentTime.getMinutes();
+        var second = currentTime.getSeconds();
+        var date = currentTime.getDate();
+        var month = currentTime.getMonth() + 1;
+        var year = currentTime.getFullYear();
+
+        var day = new Array(7);
+        day[0] = 'Chủ Nhật'; 
+        day[1] = 'Hai'; 
+        day[2] = 'Ba'; 
+        day[3] = 'Tư'; 
+        day[4] = 'Năm'; 
+        day[5] = 'Sáu'; 
+        day[6] = 'Bảy';
+        
+        document.write('Bây giờ là ' + hour + ' giờ ' + minute + ' phút ' + second + ' giây , thứ ' + day[currentTime.getDay()] + ' ngày ' + date + ' tháng ' + month + ' năm ' + year + '.')
+    </script>
+</body>
+</html>

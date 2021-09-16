@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lãi suất ngân hàng</title>
+</head>
+<body>
+    <script>
+        var money = Number(prompt('Nhập số tiền vay'));
+        var interestRate = prompt('Nhập lãi suất') / 100;
+        var year = prompt('Nhập số năm');
+
+        var interestAYear = money * interestRate;
+        var interest = money + year * interestAYear;  
+
+        document.write('Sau ' + year + ' năm số tiền cả gốc lẫn lãi là: ' + interest);
+    </script>
+</body>
+</html>

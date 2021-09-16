@@ -2,4 +2,4 @@ function showMessage() {
     alert('Xin chao');
 }
 
-console.log(Boolean( 1 === '1'));
+console.log(Boolean( 1 === '1'))
