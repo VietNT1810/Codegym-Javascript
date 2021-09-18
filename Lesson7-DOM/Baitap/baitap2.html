@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money exchange</title>
+</head>
+<body>
+    <div class="moneyAmount">
+        <h3>Amount</h3>
+        <input type="text" id="amount">
+    </div>
+    <div class="from">
+        <h3>From Currency</h3>
+        <select id="fromCurrency">
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+        </select>
+    </div>
+    <div class="to">
+        <h3>To Currency</h3>
+        <select id="toCurrency">
+            <option value="VND">VND</option>
+            <option value="USD" selected>USD</option>
+        </select>
+    </div>
+    <br>
+    <button onclick="convert()">Convert</button>
+    <h3 id="result"></h3>
+    <script>
+        let  fromCurrencyEL = document.getElementById('fromCurrency');
+        let  toCurrencyEL = document.getElementById('toCurrency');
+        let amountEL = document.getElementById('amount');
+        
+        function convert() {
+            let fromCurrency = fromCurrencyEL.value;
+            let toCurrency = toCurrencyEL.value;
+            let amount = parseFloat(amountEL.value);
+            var result = document.getElementById('result');
+
+            let rate = 22771;
+            if (fromCurrency === toCurrency){
+                result.innerHTML = `Result: ${amount}`;
+            }
+
+            else if (fromCurrency === 'VND') {
+                result.innerHTML = `Result: ${amount / rate}`;
+            }
+
+            else if (fromCurrency === 'USD') {
+                result.innerHTML = `Result: ${amount * rate}`;
+            }
+        }
+    </script>
+</body>
+</html>

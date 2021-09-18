@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="student-list">
+        <li><h3>A</h3></li>
+        <li><h3>B</h3></li>
+        <li><h3>C</h3></li>
+    </ol>
+    <button onclick="addStudent()">Add</button>
+
+    <script>
+        // tim kiem phan tu
+        let studentList = document.getElementById('student-list');
+        // tao phan tu moi
+        let liObject = document.createElement('li');
+        //  them noi dung cho phan tu moi
+        liObject.innerHTML = '<h3>D</h3>';
+        //  ham bat su kien them sinh vien
+        function addStudent() {
+            studentList.appendChild(liObject);
+        }
+    </script>
+</body>
+</html>
