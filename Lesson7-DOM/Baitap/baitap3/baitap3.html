@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tank</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .battlefield{
+            width: 191px;
+            height: 191px;
+            border: 1px solid black;
+            margin: 20px auto;
+        }
+
+        .battlefield img{
+            width: 19px;
+            height: 19px;
+            position: relative;
+            top: 19px;
+            left: 38px;
+        }
+
+        .control{
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-areas:
+            '. btnUp .';
+        }
+
+        #up{grid-area: btnUp;}
+        #down{grid-area: btnDown;}
+        #left{grid-area: btnLeft;}
+        #right{grid-area: btnRight;}
+
+
+    </style>
+</head>
+<body>
+    <div class="battlefield">
+        <img src="./tank.png" id="tank">
+    </div>
+    <div class="control">
+        <div class="blank1"></div>
+        <button onclick="up()"><i class="fas fa-arrow-up"></i></button>
+        <div class="blank1"></div>
+        <button onclick="left()"><i class="fas fa-arrow-left"></i></button>
+        <div class="blank1"></div>
+        <button onclick="right()"><i class="fas fa-arrow-right"></i></button>
+        <div class="blank1"></div>
+        <button onclick="down()"><i class="fas fa-arrow-down"></i></button>
+        <div class="blank1"></div>
+    </div>
+
+    <script>
+        let x = 19;
+        let y = 38;
+
+        function up() {
+            let tank = document.getElementById('tank');
+            x = x - 19;
+            tank.style.top = x + 'px';
+        }
+        function down() {
+            let tank = document.getElementById('tank');
+            x = x + 19;
+            tank.style.top = x + 'px';
+        }
+        function left() {
+            let tank = document.getElementById('tank');
+            y = y - 19;
+            tank.style.left = y + 'px';
+        }
+        function right() {
+            let tank = document.getElementById('tank');
+            y = y + 19;
+            tank.style.left = y + 'px';
+        }
+    </script>
+</body>
+</html>
