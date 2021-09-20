@@ -63,24 +63,32 @@
         let y = 38;
 
         function up() {
-            let tank = document.getElementById('tank');
-            x = x - 19;
-            tank.style.top = x + 'px';
+            let tank = document.getElementById('tank');0.
+            if (x > 0) {
+                x = x - 19;
+                tank.style.top = x + 'px';
+            };
         }
         function down() {
             let tank = document.getElementById('tank');
-            x = x + 19;
-            tank.style.top = x + 'px';
+            if (x < 171) {
+                x = x + 19;
+                tank.style.top = x + 'px';
+            };
         }
         function left() {
             let tank = document.getElementById('tank');
-            y = y - 19;
-            tank.style.left = y + 'px';
+            if (y > 0) {
+                y = y - 19;
+                tank.style.left = y + 'px';
+            }
         }
         function right() {
             let tank = document.getElementById('tank');
-            y = y + 19;
-            tank.style.left = y + 'px';
+            if (y < 171) {
+                y = y + 19;
+                tank.style.left = y + 'px';
+            }
         }
     </script>
 </body>

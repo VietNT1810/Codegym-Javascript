@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+</head>
+<body>
+    <script>
+        let weight = prompt('Nhập cân nặng (kg)');
+        let height = prompt('Nhập chiều cao (m)');
+        let BMI = weight / (Math.pow(height, 2));
+        
+        if (BMI > 40) {
+            alert('béo phì cấp độ III');
+        }
+        else if (40 > BMI >= 35) {
+            alert('béo phì cấp độ II');
+        }
+        else if (35 >= BMI > 30) {
+            alert('béo phì cấp độ I');
+        }
+        else if (30 >= BMI > 25) {
+            alert('thừa cân');
+        }
+        else if (25 >= BMI > 18.5) {
+            alert('bình thường');
+        }
+        else if (18.5 >= BMI > 17) {
+            alert('gầy cấp độ I');
+        }
+        else if (17 >= BMI > 16) {
+            alert('gầy cấp độ II');
+        }
+        else if (BMI < 16) {
+            alert('gầy cấp độ III');
+        }
+    </script>
+</body>
+</html>
