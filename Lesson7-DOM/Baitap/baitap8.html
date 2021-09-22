@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính điểm đại học khối D</title>
+</head>
+<body>
+    <form action="">
+        <h1><strong>Tính điểm ĐH khối D</strong></h1>
+        <label for="math">Môn Toán</label>
+        <input type="text" name="" id="math" required><br><br>
+        <label for="literature">Môn Văn</label>
+        <input type="text" name="" id="literature" required><br><br>
+        <label for="english">Môn Toán</label>
+        <input type="text" name="" id="english" required><br><br>
+        <label for="region">Khu vực</label>
+        <select id="region">
+            <option value="KV1">KV1</option>
+            <option value="KV2">KV2</option>
+            <option value="KV2-NT">KV2-NT</option>
+            <option value="KV3">KV3</option>
+        </select><br><br>
+        <button type="submit" id="calculate">Tính điểm</button><br><br>
+        <h1 id="result" style="color: red;"></h1>
+    </form>
+
+    <script>
+        document.getElementById('calculate').addEventListener('click', function () {
+            let math = parseFloat(document.getElementById('math').value);
+            let literature = parseFloat(document.getElementById('literature').value);
+            let english = parseFloat(document.getElementById('english').value);
+            let region = document.getElementById('region').value;
+            let result = document.getElementById('result');
+
+            switch (region) {
+                case 'KV1':
+                    result.innerHTML = `Tổng điểm ĐH khối D của bạn là: ${math + literature + english + 0.75}`;
+                    break;
+                case 'KV2':
+                    result.innerHTML = `Tổng điểm ĐH khối D của bạn là: ${math + literature + english + 0.25}`;
+                    break;
+                case 'KV2-NT':
+                    result.innerHTML = `Tổng điểm ĐH khối D của bạn là: ${math + literature + english + 0.5}`;
+                    break;
+                case 'KV3':
+                    result.innerHTML = `Tổng điểm ĐH khối D của bạn là: ${math + literature + english}`;
+                    break;
+                default:
+                    result.innerHTML = 'Vui lòng chọn khu vực';
+                    break;
+            }
+        });
+    </script>
+</body>
