@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game đoán số</title>
+</head>
+
+<body>
+    <button id="play">Chơi</button>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('play').addEventListener('click', function () {
+            let numInput = parseInt(prompt('Nhập một số:'));
+            let randomNum = Math.floor(Math.random() * numInput);
+            console.log(randomNum);
+            let numPick;
+            let i = 0;
+
+            do {
+                numPick = parseInt(prompt('Nhập số bạn dự đoán:'));
+                i++;
+            } while (numPick != randomNum && i < 3);
+
+            if (numPick == randomNum) {
+                alert('Bạn đã chiến thắng');
+            }
+            else {
+                alert('Bạn đã thua! Vui lòng chơi lại');
+            }
+        });
+    </script>
+</body>
+
+</html>
