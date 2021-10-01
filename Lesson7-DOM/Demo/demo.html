@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo</title>
 </head>
+
 <body>
-    <h1 id="heading">This is a title</h1>
-    <button onclick="printHeading()">Click</button>
     <script>
-        var heading = document.getElementById('heading');
-        function printHeading() {
-            // console.log(heading);
-            heading.style.color = "red";
+        function pyramid(n) {
+            for (let i = 1; i <= n; i++) {
+                let str = " ".repeat(n - i);
+
+                let str2 = "*".repeat(i * 2 - 1);
+
+                document.write(str + str2 + str);
+                document.write('<br>');
+            }
         }
-       
+
+        pyramid(5);
+
     </script>
 </body>
+
 </html>

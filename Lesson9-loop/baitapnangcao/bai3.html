@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let n = parseInt(prompt('Nhập n:'));
+        let n = 8;
+        let a = 1;
+        let b = 1;
+
+        // for (i = 1; i <= n; i++) {
+        //     // for (let h = i + 1; h <= n; h++) {
+        //     //     document.write('&nbsp;&nbsp;');
+        //     // }
+        //     for (let k = i; k >= 1; k--) {
+        //         document.write('&nbsp;&nbsp;'+1);
+        //     }
+        //     for (let j = 2; j <= i; j++) {
+        //         document.write(1);
+        //     }
+        //     document.write('<br>');
+        // }
+
+
+        document.write('Pattern C <br>');
+        for (let i = 1; i <= n; i++) {
+            for (let j = i +1; j <= n; j++) {
+                document.write('&nbsp;&nbsp;');
+            }
+            for (let k = 1; k <= n; k++) {
+                document.write(k);
+            }
+            document.write('<br>');
+        }
+
+
+    </script>
+</body>
+
+</html>
