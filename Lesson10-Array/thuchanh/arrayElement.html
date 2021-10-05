@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="number" />
+    <button id="add">Add</button>
+    <button id="pop">Pop</button>
+    <button id="display">Display</button>
+    <hr />
+    <span id="result"></span>
+
+    <script>
+        let inputNumber = document.getElementById('number');
+        let addBtn = document.getElementById('add');
+        let displayBtn = document.getElementById('display');
+        let result = document.getElementById('result');
+        let pop = document.getElementById('pop');
+        let arrayNum = [];
+
+        //Add value to array
+        addBtn.addEventListener('click', () => {
+            arrayNum.push(inputNumber.value);
+            inputNumber.value = '';
+        });
+
+        //Pop value 
+        pop.addEventListener('click', () =>{
+            arrayNum.pop();
+        });
+
+        //Display value 
+        displayBtn.addEventListener('click', () => {
+            let resultStr = '';
+            for (let i = 0; i < arrayNum.length; i++) {
+                resultStr += `Element${i} = ${arrayNum[i]} <br>`;
+            }
+            result.innerHTML = resultStr;
+        });
+    </script>
+</body>
+
+</html>

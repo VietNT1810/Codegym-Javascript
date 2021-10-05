@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numbers = [4, 7, 8, 10, 11, 12, 14, 16, 17, 18, 19, 23, 26, 27, 30, 32, 37, 41, 47, 48];
+
+        function findMax(numbers) {
+            var max = numbers[0];
+            for (let i = 0; i <= numbers.length; i++) {
+                if (numbers[i] >= max) {
+                    max = numbers[i];
+                }
+            }
+            return max;
+        }
+
+        function findMin(numbers) {
+            var min = numbers[0];
+            for (let i = 0; i <= numbers.length; i++) {
+                if (numbers[i] < min) {
+                    min = numbers[i];
+                }
+            }
+            return min;
+        }
+
+        function displayArr(numbers) {
+            return numbers.join('-');
+        }
+
+        document.write(displayArr(numbers));
+        document.write('<br>');
+        document.write('<br>');
+        document.write(`Số lớn nhất trong mảng là: ${findMax(numbers)} <br>`);
+        document.write(`Số nhỏ nhất trong mảng là: ${findMin(numbers)}`);
+        
+    </script>
+</body>
+
+</html>
