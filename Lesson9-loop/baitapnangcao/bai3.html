@@ -6,41 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #numberPyramid tr td {
+            text-align: end;
+            width: 35px;
+        }
+    </style>
 </head>
 
 <body>
     <script>
-        // let n = parseInt(prompt('Nhập n:'));
-        let n = 8;
-        let a = 1;
-        let b = 1;
-
-        // for (i = 1; i <= n; i++) {
-        //     // for (let h = i + 1; h <= n; h++) {
-        //     //     document.write('&nbsp;&nbsp;');
-        //     // }
-        //     for (let k = i; k >= 1; k--) {
-        //         document.write('&nbsp;&nbsp;'+1);
-        //     }
-        //     for (let j = 2; j <= i; j++) {
-        //         document.write(1);
-        //     }
-        //     document.write('<br>');
-        // }
-
-
-        document.write('Pattern C <br>');
-        for (let i = 1; i <= n; i++) {
-            for (let j = i +1; j <= n; j++) {
-                document.write('&nbsp;&nbsp;');
+        let noOfRow = 8;
+        let countRow = 1;
+        document.write('<table id="numberPyramid">');
+        for (let i = noOfRow; i > 0; i--) {
+            document.write('<tr>');
+            // in ra khoang trong ben trai man hinh
+            for (let j = 1; j <= i; j++) {
+                document.write('<td>&nbsp;</td>');
             }
-            for (let k = 1; k <= n; k++) {
-                document.write(k);
+            // in ra nua ben trai kim tu thap
+            for (let j = 1; j <= countRow; j++) {
+                document.write('<td>' + Math.pow(2, j - 1) + '</td>');
             }
-            document.write('<br>');
+            // in ra nua ben phai kim tu thap
+            for (let j = countRow - 1; j >= 1; j--) {
+                document.write('<td>' + Math.pow(2, j - 1) + '</td>');
+            }
+            // in khoang trong ben phai man hinh
+            for (let j = 1; j <= noOfRow - countRow; j++) {
+                document.write('<td>&nbsp;</td>');
+            }
+            // dong tiep theo
+            document.write('</tr>');
+            countRow++;
         }
-
-
+        document.write('</table>');
     </script>
 </body>
 

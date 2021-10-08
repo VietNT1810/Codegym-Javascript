@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Caro Game</h3>
+    <hr>
+    <p id="game"></p>
+    <button id="changeValue">Change Value</button><br>
+
+    <script>
+        let game = document.getElementById('game');
+
+        for (i = 1; i <= 5; i++) {
+            for (j = 1; j <= 5; j++) {
+                document.write('0' + '&nbsp;&nbsp;');
+            }
+            document.write('<br>');
+        }
+
+        document.getElementById('changeValue').addEventListener('click', () => {
+            let positionX = parseInt(prompt('Nhap X:'));
+            let positionY = parseInt(prompt('Nhap Y:'));
+
+            for (i = 1; i <= 5; i++) {
+                for (j = 1; j <= 5; j++) {
+                    if (i == positionX && j == positionY) {
+                        document.write('x' + '&nbsp;&nbsp;');
+                    } else {
+                        document.write('0' + '&nbsp;&nbsp;');
+                    }
+                }
+                document.write('<br>');
+            }
+            
+            
+        });
+    </script>
+</body>
+
+</html>
