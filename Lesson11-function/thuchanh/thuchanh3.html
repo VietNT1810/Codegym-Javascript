@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="arrayBtn1">Array1</button>
+    <button id="arrayBtn2">Array2</button>
+    <button id="arrayBtn3">Array3</button>
+    <button id="arrayBtn4">Array4</button>
+
+    <script>
+        let arr1 = [3, 5, 1, 8, -3, 7, -8];
+        let arr2 = [7, 12, 6, 9, 20, 56, 89];
+        let arr3 = [];
+        let arr4 = [0, 0, 0, 0, 0, 0];
+
+        document.getElementById('arrayBtn1').addEventListener('click',() => {
+            alert(minInArray(arr1));
+        });
+        document.getElementById('arrayBtn2').addEventListener('click',() => {
+            alert(minInArray(arr2));
+        });
+        document.getElementById('arrayBtn3').addEventListener('click',() => {
+            alert(minInArray(arr3));
+        });
+        document.getElementById('arrayBtn4').addEventListener('click',() => {
+            alert(minInArray(arr4));
+        });
+
+
+        function minInArray(array) {
+            let min = array[0];
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] < min) {
+                    min = array[i];
+                }
+            }
+            return min;
+        }
+
+        // alert(minInArray(arr1));
+    </script>
+</body>
+
+</html>
