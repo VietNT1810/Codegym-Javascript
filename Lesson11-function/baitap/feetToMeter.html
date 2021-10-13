@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feet to meter</title>
+</head>
+
+<body>
+    <h1>Feet to meter</h1>
+    <label for="feet">Feet: </label>
+    <input type="number" id="feet" name="feet" placeholder="Nhập giá trị feet" oninput="feetToMeter()">
+    <label for="meter">Meter: </label>
+    <input type="number" id="meter" name="meter" placeholder="Nhập giá trị meter" oninput="meterToFeet()">
+    
+    <script>
+        function feetToMeter(){
+            let feet = document.getElementById('feet').value;
+            return document.getElementById('meter').value = feet * 0.305;
+        }
+        function meterToFeet(){
+            let meter = document.getElementById('meter').value;
+            return document.getElementById('feet').value = meter * 3.279;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let s = prompt('Nhập từ');
+
+        function isPalindrome(s) {
+            let strSplit = s.split('');
+            let strReverse = reverseString(strSplit);
+
+            if (s == strReverse) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        alert(isPalindrome(s));
+
+
+        function reverseString(a) {
+            let first = 0;
+            let last = a.length - 1;
+            let temp;
+
+            while (first < last) {
+                temp = a[first];
+                a[first] = a[last];
+                a[last] = temp;
+                first++;
+                last--;
+            }
+
+            let joinArray = a.join('');
+            return joinArray;
+        }
+    </script>
+
+</body>
+
+</html>

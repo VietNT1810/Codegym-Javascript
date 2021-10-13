@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập sử dụng hàm</title>
+</head>
+
+<body>
+    <button onclick="bai1()">Bài 1</button>
+    <button onclick="bai2()">Bài 2</button>
+    <button onclick="bai3()">Bài 3</button>
+    <button onclick="bai4()">Bài 4</button>
+    <button onclick="bai5()">Bài 5</button>
+    <button onclick="bai6()">Bài 6</button>
+    <button onclick="bai7()">Bài 7</button>
+    <button onclick="bai8()">Bài 8</button>
+    <button onclick="bai9()">Bài 9</button>
+    <button onclick="bai10()">Bài 10</button>
+
+    <script>
+        //Bài 1
+        function bai1() {
+            let a = parseFloat(prompt('Nhập số thứ nhất:'));
+            let b = parseFloat(prompt('Nhập số thứ hai:'));
+
+            if (a > b) {
+                alert('@@');
+            } else {
+                return alert(`Tổng của hai số là: ${a + b}`);
+            }
+        }
+
+        //Bài 2
+        function bai2() {
+            let userInput = prompt('Nhập tên chòm sao muốn tìm: ');
+            console.log(userInput);
+
+
+            function findStarName(star) {
+                let stars = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+                let starsName = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+                for (let i = 0; i < stars.length - 1; i++) {
+                    if (stars[i] != star) {
+                        continue;
+                    } else if (stars[i] == star) {
+                        return starsName[i];
+                    }
+                }
+
+                if (!stars.includes(star)) {
+                    return 'Không có chòm sao tương ứng';
+                }
+            }
+
+            return alert(findStarName(userInput));
+        }
+
+        //Bài 3
+        function bai3() {
+            let inputNumber = parseFloat(prompt('Nhập số:'));
+
+            function squareNumber(num) {
+                return Math.pow(num, 2);
+            }
+
+            return alert(`Bình phương của số vừa nhập là: ${squareNumber(inputNumber)}`);
+        }
+
+        //Bài 4
+        function bai4() {
+            let r = parseFloat(prompt('Nhập bán kính'));
+
+            function circuit(value) {
+                return (2 * Math.PI * value).toFixed(2);
+            }
+            function area(value) {
+                return (2 * Math.PI * Math.pow(value, 2)).toFixed(2);
+            }
+
+            return alert(`
+            Chu vi hình tròn: ${circuit(r)}
+            Diện tích hình tròn: ${area(r)}
+            `);
+        }
+
+        //Bài 5
+        function bai5() {
+            let n = parseInt(prompt('Nhập số: '));
+
+            function factorial(value) {
+                let result = 1;
+                for (let i = 1; i <= value; i++) {
+                    result *= i;
+                }
+                return result;
+            }
+
+            return alert(factorial(n));
+        }
+
+        //Bài 6
+        function bai6() {
+            let n = parseInt(prompt('Nhập số: '));
+            function isNum(value) {
+                return isNaN(value) ? false : true;
+            }
+            return alert(isNum(n));
+        }
+
+        //Bài 7
+        function bai7() {
+            let a = parseInt(prompt('Nhập số thứ nhất: '));
+            let b = parseInt(prompt('Nhập số thứ hai: '));
+            let c = parseInt(prompt('Nhập số thứ ba: '));
+
+            function findMin(array) {
+                let min = array[0];
+                for (let i = 0; i < array.length; i++) {
+                    if (min > array[i]) {
+                        min = array[i];
+                    }
+                }
+                return min;
+            }
+
+            alert(findMin([a, b, c]));
+        }
+
+        //Bài 8
+        function bai8() {
+            let n = parseFloat(prompt('Nhập số: '));
+
+            function isInt(number) {
+                if (Number.isInteger(number) && number > 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            alert(isInt(n));
+        }
+
+        //Bài 9
+        function bai9() {
+            function reverseArray(array) {
+                let first = 0;
+                let last = array.length - 1;
+                let temp;
+
+                while (first < last) {
+                    temp = array[first];
+                    array[first] = array[last];
+                    array[last] = temp;
+                    first++;
+                    last--;
+                }
+                return array;
+            }
+
+            alert(reverseArray([1, -2, 2, 3, 7, 2, 67, 3]));
+        }
+
+        //Bài 10
+        function bai10() {
+            function findChar(array, char) {
+                let count = 0;
+
+                for (let i = 0; i < array.length; i++) {
+                    if (char == array[i]) {
+                        count++;
+                        continue;
+                    }
+                }
+
+                return count;
+            }
+
+            return alert(findChar(['a', 'g', 'ư', 't', 'h','@','#','@', 7,'@', 9, 't'], '@'));
+        }
+    </script>
+</body>
+
+</html>
