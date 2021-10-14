@@ -10,16 +10,18 @@
 </head>
 
 <body>
-    <h2>Add New Product</h2>
-    <input type="text" id="newProduct" placeholder="New Product">
-    <button onclick="addBtn()">Add</button>
-    <h2>Display All Product</h2>
-    <table id="productTable" border="1">
-        <tr>
-            <th colspan="2">Product Name</th>
-            <th id="countProduct">products</th>
-        </tr>
-    </table>
+    <div id="wrap">
+        <h2>Add New Product</h2>
+        <input type="text" id="newProduct" placeholder="New Product">
+        <button onclick="addBtn()">Add</button>
+        <h2>Display All Product</h2>
+        <table id="productTable" >
+            <tr>
+                <th colspan="3">Product Name</th>
+                <th colspan="2" id="countProduct">products</th>
+            </tr>
+        </table>
+    </div>
 
     <script src="script.js"></script>
 </body>
