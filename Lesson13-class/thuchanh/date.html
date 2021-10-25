@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date class</title>
+</head>
+
+<body>
+    <script>
+        class MyDate {
+            constructor(day, month, year) {
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+            getDay() {
+                return this.day;
+            }
+            getMonth() {
+                return this.month;
+            }
+            getYear() {
+                return this.year;
+            }
+            setDay(day) {
+                this.day = day;
+            }
+            setMonth(month) {
+                this.month = month;
+            }
+            setYear(year) {
+                this.year = year;
+            }
+            setDate(day, month, year) {
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+            toString() {
+                return ('0' + this.getDay()).slice(-2) + '/'
+                    + ('0' + (this.getMonth())).slice(-2) + '/'
+                    + ('000' + (this.getYear())).slice(-4);
+            }
+        }
+
+        let date = new MyDate(4, 5, 2020);
+        console.log(date.toString());
+    </script>
+</body>
+
+</html>

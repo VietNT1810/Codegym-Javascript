@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashlight</title>
+</head>
+
+<body>
+    <button id="on">Turn On</button>
+    <button id="off">Turn Off</button>
+    <button type="reset" onclick="document.location.reload()">Recharge</button>
+    <p id='result'></p>
+    <br>
+    <script>
+        class Battery {
+            constructor() {
+                this.energy = 0;
+            }
+            setEnergy(energy) {
+                this.energy = energy;
+            }
+            getEnergy() {
+                return this.energy;
+            }
+            decreaseEnergy() {
+                if (this.energy > 0) {
+                    this.energy -= 1;
+                }
+            }
+        }
+
+        class Flashlight {
+            constructor() { }
+            setBattery(battery) {
+                this.battery = battery;
+            }
+            getBatteryInfo() {
+                return this.battery.getEnergy();
+            }
+            turnOn() {
+                this.status = true;
+                this.battery.decreaseEnergy();
+            }
+            turnOff() {
+                this.status = false;
+            }
+            light() {
+                if (this.status) {
+                    return 'The flashlight is on';
+                } else {
+                    return 'The flashlight is off';
+                }
+            }
+        }
+
+        let battery = new Battery();
+        battery.setEnergy(10);
+        let flashlight = new Flashlight();
+        flashlight.setBattery(battery);
+
+        let result = document.querySelector('p');
+        let batteryStatus = flashlight.getBatteryInfo();
+        let isPause = true;
+
+        flashlight.turnOff();
+        result.innerHTML = flashlight.light() + "<br>" + batteryStatus + " batteries remaining";
+
+        let onBtn = document.getElementById('on').addEventListener('click', () => {
+            flashlight.turnOn();
+            isPause = false;
+        });
+
+        let offBtn = document.getElementById('off').addEventListener('click', () => {
+            flashlight.turnOff();
+            result.innerHTML = flashlight.light();
+            isPause = true;
+        });
+
+
+        var timer = setInterval(function () {
+            if (!isPause) {
+                if (batteryStatus <= 0) {
+                    clearInterval(timer);
+                    result.innerHTML = "Out of battery";
+                } else {
+                    result.innerHTML = flashlight.light() + "<br>" + batteryStatus + " batteries remaining";
+                }
+                batteryStatus -= 1;
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
