@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="apple.js"></script>
+    <script src="human.js"></script>
+
+    <script>
+        let apple = new Apple();
+        let adam = new Human('Mỡ', 'male', 50);
+        let eva = new Human('XO', 'female', 40);
+
+        while (!apple.isEmpty()) {
+            console.log(adam.say());
+            adam.eat(apple);
+            console.log(eva.say());
+            eva.eat(apple);
+            if (apple.getWeight() > 0) {
+                console.log(`Còn ${apple.getWeight()} miếng táo`);
+            } else {
+                console.log("Hết táo rùi XO ăn Mỡ ik")
+            }
+
+        }
+    </script>
+</body>
+
+</html>
