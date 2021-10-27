@@ -1,11 +1,4 @@
-function pyramid(n) {
-  for (let i = 1; i <= n; i++) {
-    let str = " ".repeat(n - i);
-
-    let str2 = "*".repeat(i * 2 - 1);
-
-    console.log(str + str2 + str);
-  }
-}
-
-pyramid(5);
+let x = [1, 3, 5, 7];
+let y = [2, 4, 6];
+x[2] = y[x.length - 3];
+console.log(x);

@@ -113,9 +113,11 @@
 
         //Bài 7
         function bai7() {
-            let a = parseInt(prompt('Nhập số thứ nhất: '));
-            let b = parseInt(prompt('Nhập số thứ hai: '));
-            let c = parseInt(prompt('Nhập số thứ ba: '));
+            let numArr = [];
+
+            for (let i = 0; i < 3; i++) {
+                numArr[i] = parseFloat(prompt(('Nhap so:')));
+            }
 
             function findMin(array) {
                 let min = array[0];
@@ -127,7 +129,7 @@
                 return min;
             }
 
-            alert(findMin([a, b, c]));
+            alert(`So nho nhat: ${findMin(numArr)}`); //"So nho nhat" + 
         }
 
         //Bài 8
@@ -173,14 +175,15 @@
                 for (let i = 0; i < array.length; i++) {
                     if (char == array[i]) {
                         count++;
-                        continue;
                     }
                 }
+
+                if (count == 0) return -1;
 
                 return count;
             }
 
-            return alert(findChar(['a', 'g', 'ư', 't', 'h','@','#','@', 7,'@', 9, 't'], '@'));
+            return alert(findChar(['a', 'g', 'ư', 't', 'h', '@', '#', '@', 7, '@', 9, 't'], '@'));
         }
     </script>
 </body>
