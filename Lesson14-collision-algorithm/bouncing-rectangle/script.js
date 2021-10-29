@@ -21,14 +21,14 @@ let height = c.height;
 //setup blue rectangle
 let blueX = 40;
 let blueY = 50;
-let blueXSpeed = 1;
-let blueYSpeed = 1;
+let blueXSpeed = 2;
+let blueYSpeed = 2;
 
 //setup red rectangle
 let redX = 500;
 let redY = 300;
-let redXSpeed = 1;
-let redYSpeed = 1;
+let redXSpeed = 2;
+let redYSpeed = 2;
 
 
 function draw() {
@@ -59,18 +59,30 @@ function move() {
     blueY += blueYSpeed;
 
     //change position red
-    if (redX + 100 == width || redX == 0 || blueX + 99 == redX) {
+    if (redX + 100 == width || redX == 0) {
         redXSpeed = -redXSpeed;
     }
 
-    if (redY + 50 == height || redY == 0 || blueY + 49 == redY) {
+
+    if (redY + 50 == height || redY == 0) {
         redYSpeed = -redYSpeed;
     }
 
-    //check if collision 
     redX += redXSpeed;
     redY += redYSpeed;
 
+    //check if collision 
+    if (blueX < redX + 100 &&
+        blueX + 100 > redX &&
+        blueY < redY + 50 &&
+        blueY + 50 > redY
+    ) {
+        blueXSpeed = -blueXSpeed;
+        blueYSpeed = blueYSpeed;
+        redXSpeed = -redXSpeed;
+        redYSpeed = redYSpeed;
+    }
+    
     draw();
     console.log(blueX);
     console.log(redX);
