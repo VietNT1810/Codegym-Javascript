@@ -51,4 +51,12 @@ class Snake {
                 break;
         }
     }
+
+    eat(fruit){
+        if (this.x === fruit.x && this.y === fruit.y){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
