@@ -10,6 +10,8 @@ let fruit;
 
 let score = 0;
 let result = document.querySelector('.result');
+let gameOverMenu = document.getElementById("gameOver");
+
 
 function setup() {
     snake = new Snake();
@@ -27,14 +29,12 @@ function setup() {
         if (snake.eat(fruit)) {
             console.log("eating");
             fruit.randomSpawn();
-            score += 10;
-            result.innerHTML = `Score: ${score}`;
+            score += 1;
+            result.innerHTML = `${score}`;
         }
 
         snake.checkCollision();
-    }, 200); //change snake speed
-
-    
+    }, 100); //change snake speed
 };
 
 setup();
@@ -55,3 +55,10 @@ fruitImg.src='apple.png';
 //audio
 let sound = new Audio();
 sound.src = "eat.wav";
+
+//restartButton
+let restartButton = document.getElementById('restartButton');
+
+restartButton.addEventListener('click', function() {
+    gameOverMenu.style.visibility = "hidden";
+});

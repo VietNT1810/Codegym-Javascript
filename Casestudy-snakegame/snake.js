@@ -6,6 +6,7 @@ class Snake {
         this.ySpeed = 0;
         this.total = 1;
         this.tail = [];
+        this.gameOver = document.getElementById('gameOver');
     }
 
     draw() {
@@ -81,8 +82,8 @@ class Snake {
     checkCollision() {
         for (let i = 0; i < this.tail.length; i++) {
             if (this.x === this.tail[i].x && this.y === this.tail[i].y) {
-                this.total = 1;
-                this.tail = [];
+                this.x = this.speed;
+                this.gameOver.style.visibility = "visible";
             }
         }
     }
