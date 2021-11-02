@@ -1,6 +1,6 @@
 let canvas = document.querySelector(".canvas");
 let ctx = canvas.getContext("2d");
-let scale = 10;
+let scale = 20;
 
 let rows = canvas.height / scale;
 let columns = canvas.width / scale;
@@ -30,7 +30,11 @@ function setup() {
             score += 10;
             result.innerHTML = `Score: ${score}`;
         }
+
+        snake.checkCollision();
     }, 200); //change snake speed
+
+    
 };
 
 setup();
@@ -42,3 +46,12 @@ addEventListener('keydown', function (e) {
     let direction = e.key.replace('Arrow', '');
     snake.changeDirection(direction);
 });
+
+
+//image
+let fruitImg = new Image();
+fruitImg.src='apple.png';
+
+//audio
+let sound = new Audio();
+sound.src = "eat.wav";

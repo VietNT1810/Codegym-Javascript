@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    padding-bottom: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  background-color: black;
+  align-items: center;
+}
+
+.game {
+}
+
+.scoreboard {
+  width: 500px;
+  height: 50px;
+  background-color: #476C2A;
+}
+
+canvas {
+  background-color: #a9ca4e;
+  opacity: 1;
+  background-image: repeating-linear-gradient(
+      45deg,
+      #a0c444 25%,
+      transparent 25%,
+      transparent 75%,
+      #a0c444 75%,
+      #a0c444
+    ),
+    repeating-linear-gradient(
+      45deg,
+      #a0c444 25%,
+      #a9ca4e 25%,
+      #a9ca4e 75%,
+      #a0c444 75%,
+      #a0c444
+    );
+  background-position: 0 0, 20px 20px;
+  background-size: 40px 40px;
+}

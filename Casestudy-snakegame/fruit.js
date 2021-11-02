@@ -2,6 +2,8 @@ class Fruit {
     constructor() {
         this.x;
         this.y;
+        this.spriteWidth = 320;
+        this.spriteHeight = 256;
     }
 
     randomSpawn() {
@@ -11,7 +13,8 @@ class Fruit {
     }
 
     draw() {
-        ctx.fillStyle = "#E1B114";
-        ctx.fillRect(this.x, this.y, scale, scale);
+        // ctx.fillRect(this.x, this.y, scale, scale);
+        ctx.drawImage(fruitImg, this.x, this.y, scale, scale);
     }
 }
+
