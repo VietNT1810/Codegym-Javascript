@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap");
+@font-face {
+  font-family: cheeseburger;
+  src: url(./cheeseburger.ttf);
+}
 
 * {
   margin: 0;
@@ -74,7 +77,8 @@ canvas {
 #gameOver .title {
   padding: 20px 0;
   font-size: 40px;
-  font-family: 'Irish Grover', cursive;
+  font-family: cheeseburger;
+  font-weight: lighter;
 }
 
 #restartButton a {
@@ -83,6 +87,7 @@ canvas {
   border: 1px solid white;
   border-radius: 10px;
   transition: 0.5s;
+  padding: 10px
 }
 
 #restartButton a:hover{
