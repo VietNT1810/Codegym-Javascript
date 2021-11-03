@@ -9,13 +9,20 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: black;
+}
+
 .container {
-  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding-bottom: 20px;
   display: flex;
   flex-direction: column-reverse;
-  background-color: black;
   align-items: center;
+  z-index: -1;
 }
 
 .scoreboard {
@@ -87,10 +94,9 @@ canvas {
   border: 1px solid white;
   border-radius: 10px;
   transition: 0.5s;
-  padding: 10px
+  padding: 10px;
 }
 
-#restartButton a:hover{
-  background-color:rgb(1, 150, 1);
+#restartButton a:hover {
+  background-color: rgb(1, 150, 1);
 }
-
