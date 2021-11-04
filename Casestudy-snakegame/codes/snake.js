@@ -20,6 +20,7 @@ class Snake {
     }
 
     update() {
+        //update snake tail
         for (let i = 0; i < this.tail.length - 1; i++) {
             this.tail[i] = this.tail[i + 1];
         }
@@ -29,9 +30,11 @@ class Snake {
             y: this.y
         }
 
+        //let snake run 
         this.x += this.xSpeed;
         this.y += this.ySpeed;
 
+        //let snake go through wall
         if (this.x > canvas.width - scale) {
             this.x = 0;
         }

@@ -7,6 +7,7 @@ let columns = canvas.width / scale;
 
 let snake;
 let fruit;
+let snakeSpeed = 100;
 
 let score = 0;
 let result = document.querySelector('.result');
@@ -27,14 +28,14 @@ function setup() {
         snake.update();
         snake.draw();
         if (snake.eat(fruit)) {
-            console.log("eating");
+            // console.log("eating");
             fruit.randomSpawn();
             score += 1;
             result.innerHTML = `${score}`;
         }
 
         snake.checkCollision();
-    }, 100); //change snake speed
+    }, snakeSpeed); //change snake speed
 };
 
 setup();
@@ -50,11 +51,11 @@ addEventListener('keydown', function (e) {
 
 //image
 let fruitImg = new Image();
-fruitImg.src='apple.png';
+fruitImg.src='../images/apple.png';
 
 //audio
 let sound = new Audio();
-sound.src = "eat.wav";
+sound.src = "../audio/eat.wav";
 
 //restartButton
 let restartButton = document.getElementById('restartButton');
