@@ -15,13 +15,13 @@ let startMenu = document.getElementById("startMenu");
 let gameOverMenu = document.getElementById("gameOver");
 
 //Start game button
-let startButton = document.getElementById('startButton');
+// let startButton = document.getElementById('startButton');
 
-startButton.addEventListener('click', function() {
-    startMenu.style.visibility = "hidden";
-    setup();
-});
-
+// startButton.addEventListener('click', function() {
+//     startMenu.style.visibility = "hidden";
+//     setup();
+// });
+setup();
 //Setup game
 function setup() {
     snake = new Snake();
@@ -57,7 +57,7 @@ addEventListener('keydown', function (e) {
 
 //image
 let fruitImg = new Image();
-fruitImg.src='../images/apple.png';
+fruitImg.src = '../images/apple.png';
 
 //audio
 let sound = new Audio();
@@ -66,6 +66,6 @@ sound.src = "../audio/eat.wav";
 //restartButton
 let restartButton = document.getElementById('restartButton');
 
-restartButton.addEventListener('click', function() {
+restartButton.addEventListener('click', function () {
     gameOverMenu.style.visibility = "hidden";
 });

@@ -7,16 +7,21 @@ class Snake {
         this.total = 1;
         this.tail = [];
         this.gameOver = document.getElementById('gameOver');
+        
+        this.sxHead = 64 * 4;
+        this.syHead = 0;
     }
 
     draw() {
         ctx.fillStyle = "#487EFB";
 
         for (let i = 0; i < this.tail.length; i++) {
-            ctx.fillRect(this.tail[i].x, this.tail[i].y, scale, scale);
+            // ctx.fillRect(this.tail[i].x, this.tail[i].y, scale, scale);
+            ctx.drawImage(snakeImg, 64, 0, 64, 64, this.tail[i].x, this.tail[i].y, scale, scale);
         }
 
-        ctx.fillRect(this.x, this.y, scale, scale);
+        // ctx.fillRect(this.x, this.y, scale, scale);
+        ctx.drawImage(snakeImg, this.sxHead, this.syHead, 64, 64, this.x, this.y, scale, scale);
     }
 
     update() {
@@ -91,3 +96,6 @@ class Snake {
         }
     }
 }
+
+let snakeImg = new Image();
+snakeImg.src = '../images/snake-graphics-1.png';
