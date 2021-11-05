@@ -42,8 +42,7 @@ function setup() {
             score += 1;
             result.innerHTML = `${score}`;
         }
-
-        snake.checkCollision();
+        snake.checkSelfCollision();
     }, snakeSpeed); //change snake speed
 };
 

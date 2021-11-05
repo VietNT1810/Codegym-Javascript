@@ -25,6 +25,10 @@ body {
   z-index: -1;
 }
 
+canvas{
+  border: 20px solid green;
+}
+
 .instruction {
   width: 300px;
   background-color: #4E9F3D;
