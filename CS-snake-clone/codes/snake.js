@@ -14,8 +14,8 @@ class Snake {
         this.sxTail = 64;
         this.syTail = 64;
 
-        this.tx;
-        this.ty;
+        this.tx = 0;
+        this.ty = 0;
     }
 
     draw() {
@@ -28,39 +28,37 @@ class Snake {
             let segment = this.tail[i];
             let segx = segment.x;
             let segy = segment.y;
-            let tx;
-            let ty;
             if (i == this.tail.length - 1) {
                 //head - Determine the correct image 
                 var pseg = this.tail[i - 1];
                 if (pseg.y < segy) {
                     // Up
-                    tx = 4; ty = 1;
+                    this.tx = 4; this.ty = 1;
                 } else if (pseg.x > segx) {
                     // Right
-                    tx = 3; ty = 1;
+                    this.tx = 3; this.ty = 1;
                 } else if (pseg.y > segy) {
                     // Down
-                    tx = 3; ty = 0;
+                    this.tx = 3; this.ty = 0;
                 } else if (pseg.x < segx) {
                     // Left
-                    tx = 4; ty = 0;
+                    this.tx = 4; this.ty = 0;
                 }
             } else if (i == 0) {
                 var nseg = this.tail[i + 1];
                 //tail - Determine the correct image
                 if (segy > nseg.y) {
                     // Up
-                    tx = 3; ty = 2;
+                    this.tx = 3; this.ty = 2;
                 } else if (segx < nseg.x) {
                     // Right
-                    tx = 4; ty = 2;
+                    this.tx = 4; this.ty = 2;
                 } else if (segy < nseg.y) {
                     // Down
-                    tx = 4; ty = 3;
+                    this.tx = 4; this.ty = 3;
                 } else if (segx > nseg.x) {
                     // Left
-                    tx = 3; ty = 3;
+                    this.tx = 3; this.ty = 3;
                 }
             } else {
                 //body - Determine the correct image
@@ -68,26 +66,26 @@ class Snake {
                 var nseg = this.tail[i + 1]; // Next segment
                 if (nseg.x < segx && pseg.x > segx || pseg.x < segx && nseg.x > segx) {
                     // Horizontal Left-Right
-                    tx = 1; ty = 0;
+                    this.tx = 1; this.ty = 0;
                 } else if (pseg.x < segx && nseg.y > segy || nseg.x < segx && pseg.y > segy) {
                     // Angle Left-Down
-                    tx = 2; ty = 0;
+                    this.tx = 2; this.ty = 0;
                 } else if (pseg.y < segy && nseg.y > segy || nseg.y < segy && pseg.y > segy) {
                     // Vertical Up-Down
-                    tx = 2; ty = 1;
+                    this.tx = 2; this.ty = 1;
                 } else if (pseg.y < segy && nseg.x < segx || nseg.y < segy && pseg.x < segx) {
                     // Angle Top-Left
-                    tx = 2; ty = 2;
+                    this.tx = 2; this.ty = 2;
                 } else if (pseg.x > segx && nseg.y < segy || nseg.x > segx && pseg.y < segy) {
                     // Angle Right-Up
-                    tx = 0; ty = 1;
+                    this.tx = 0; this.ty = 1;
                 } else if (pseg.y > segy && nseg.x > segx || nseg.y > segy && pseg.x > segx) {
                     // Angle Down-Right
-                    tx = 0; ty = 0;
+                    this.tx = 0; this.ty = 0;
                 }
             }
 
-            ctx.drawImage(snakeImg, this.sxTail * tx, this.syTail * ty, 64, 64, this.tail[i].x, this.tail[i].y, scale, scale);
+            ctx.drawImage(snakeImg, this.sxTail * this.tx, this.syTail * this.ty, 64, 64, this.tail[i].x, this.tail[i].y, scale, scale);
         }
         // ctx.fillRect(this.x, this.y, scale, scale);
 
@@ -165,6 +163,8 @@ class Snake {
         if (this.x === fruit.x && this.y === fruit.y) {
             this.total++;
             sound.play();
+            this.tx = 2;
+            this.ty = 2;
             return true;
         } else {
             return false;

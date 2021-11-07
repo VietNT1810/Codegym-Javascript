@@ -2,8 +2,8 @@ class Fruit {
     constructor() {
         this.x;
         this.y;
-        this.spriteWidth = 320;
-        this.spriteHeight = 256;
+        // this.spriteWidth = 320;
+        // this.spriteHeight = 256;
     }
 
     randomSpawn() {

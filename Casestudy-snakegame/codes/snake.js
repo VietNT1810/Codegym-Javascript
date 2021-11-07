@@ -10,9 +10,6 @@ class Snake {
 
         this.sxHead = 64 * 4;
         this.syHead = 0;
-
-        this.tx;
-        this.ty;
     }
 
     draw() {
@@ -103,21 +100,17 @@ class Snake {
         this.x += this.xSpeed;
         this.y += this.ySpeed;
 
-        //let snake go through wall
-        if (this.x > canvas.width) {
-            this.x = this.speed;
+        //let snake hit the wall
+        if (this.x >= canvas.width) {
             this.gameOver.style.visibility = "visible";
         }
         else if (this.x < 0) {
-            this.x = this.speed;
             this.gameOver.style.visibility = "visible";
         }
-        else if (this.y > canvas.height) {
-            this.x = this.speed;
+        else if (this.y >= canvas.height) {
             this.gameOver.style.visibility = "visible";
         }
         else if (this.y < 0) {
-            this.x = this.speed;
             this.gameOver.style.visibility = "visible";
         }
     }
@@ -126,7 +119,7 @@ class Snake {
         switch (direction) {
             case 'Up':
                 this.xSpeed = 0;
-                this.ySpeed = -scale * 1;
+                this.ySpeed = -scale;
                 break;
             case 'Down':
                 this.xSpeed = 0;
@@ -165,5 +158,3 @@ class Snake {
     }
 }
 
-let snakeImg = new Image();
-snakeImg.src = '../images/snake-graphics-1.png';

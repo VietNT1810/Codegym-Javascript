@@ -103,6 +103,7 @@ canvas {
   font-size: 20px;
   font-weight: bold;
   padding: 20px 0;
+  cursor: pointer;
 }
 
 #gameOver {
@@ -137,7 +138,7 @@ canvas {
 #restartButton a {
   text-decoration: none;
   color: white;
-  border: 1px solid white;
+  border: 2px solid white;
   border-radius: 10px;
   transition: 0.5s;
   padding: 10px;

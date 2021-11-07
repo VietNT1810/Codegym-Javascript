@@ -58,6 +58,9 @@ addEventListener('keydown', function (e) {
 let fruitImg = new Image();
 fruitImg.src='../images/apple.png';
 
+let snakeImg = new Image();
+snakeImg.src = '../images/snake-graphics-1.png';
+
 //audio
 let sound = new Audio();
 sound.src = "../audio/eat.wav";
@@ -67,4 +70,5 @@ let restartButton = document.getElementById('restartButton');
 
 restartButton.addEventListener('click', function() {
     gameOverMenu.style.visibility = "hidden";
+    setup();
 });

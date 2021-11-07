@@ -13,10 +13,10 @@ class Fruit {
     }
 
     draw() {
-        ctx.fillRect(this.x, this.y, scale, scale);
+        // ctx.fillRect(this.x, this.y, scale, scale);
         // ctx.drawImage(fruitImg, this.x, this.y, scale, scale);
         // context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height);
-        // ctx.drawImage(fruitImg2, 0, 64 * 3, 64, 64, this.x, this.y, scale, scale);
+        ctx.drawImage(fruitImg2, 0, 64 * 3, 64, 64, this.x, this.y, scale, scale);
     }
 }
 
